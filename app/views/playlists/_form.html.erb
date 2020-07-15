@@ -1,0 +1,13 @@
+<%= form_for(@playlist) do |f| %>
+    <div class="form-group">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, class: "form-control" %></div>
+  
+    <div class="form-group">
+      <%= f.label :min_age, "Age Requirement" %><br>
+      <%= f.number_field :min_age, class: "form-control" %></div>
+
+    <div class="actions">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+<% end %>
