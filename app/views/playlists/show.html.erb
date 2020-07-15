@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<div class="center">
+
+  <div class="info">
+    <p><strong>Name:</strong> <%= @playlist.name %></p>
+    <p><strong>Total Number of Users:</strong> <%= @playlist.users.count %></p>
+    <p><strong>Age Requirement:</strong> <%= @playlist.min_age %> inches</p>
+    <p><strong>Sleepiness Rating:</strong> <%= @playlist.sleepiness_rating %></p>
+    <p><strong>Happiness Rating:</strong> <%= @playlist.happiness_rating %></p>
+    <% if current_user.admin %>
+      <%= link_to 'Edit Playlist', [:edit, @playlist] %></p>
+    <% else %>
+      <%= form_for @song do |f| %>
+        <%= f.hidden_field :user_id %><br />
+        <%= f.hidden_field :playlist_id %><br />
+        <%= f.submit "Go to this song", class:"btn btn-light" %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

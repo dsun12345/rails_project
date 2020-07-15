@@ -6,8 +6,16 @@
     <div class="form-group">
       <%= f.label :min_age, "Age Requirement" %><br>
       <%= f.number_field :min_age, class: "form-control" %></div>
-
+  
+    <div class="form-group">
+      <%= f.label :happiness_rating, "How good was the playlist? (1-5 scale)" %><br>
+      <%= f.number_field :happiness_rating, class: "form-control" %></div>
+  
+    <div class="form-group">
+      <%= f.label :sleepiness_rating, "Did the playlist make you want to sleep? (1-5 scale)" %><br>
+      <%= f.number_field :sleepiness_rating, class: "form-control" %></div>
+  
     <div class="actions">
       <%= f.submit class: "btn btn-primary" %>
     </div>
-<% end %>
+  <% end %>

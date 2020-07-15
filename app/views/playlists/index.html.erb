@@ -1,4 +1,4 @@
-<h1>Listing attractions</h1>
+<h1>Listing playlists</h1>
 
 <table class="table">
   <thead>
@@ -9,19 +9,17 @@
 
   <tbody>
     <tr> 
-      <td><strong>Name</strong></td>
-      <td><strong>Tickets</strong></td>
+      <td><strong>Title</strong></td>
       <td><strong>Details</strong></td>
     </tr>
-    <% @attractions.each do |attraction| %>
+    <% @playlists.each do |playlist| %>
       <tr>
 
-        <td><%= attraction.name %></td>
-        <td><%= attraction.tickets %></td>
+        <td><%= playlist.title %></td>
         <% if current_user.admin %>
-          <td><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></td>
+          <td><%= link_to "Show #{playlist.title}", playlist_path(playlist) %></td>
         <% else %>
-          <td><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></td>
+          <td><%= link_to "Go on #{playlist.title}", playlist_path(playlist) %></td>
         <% end %>
       </tr>
     <% end %>
@@ -34,5 +32,5 @@
     <%= link_to "Back to profile", user_path(@user), {:class => "btn btn-primary"} %>
   </p>
 <% else %>
-  <p><%= link_to 'New Attraction', new_attraction_path %></p>
+  <p><%= link_to 'New Playlist', new_playlist_path %></p>
 <% end %>
