@@ -15,8 +15,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_235715) do
   create_table "playlists", force: :cascade do |t|
     t.string "title"
     t.integer "min_age"
-    t.integer "sleepiness_rating"
-    t.integer "happiness_rating"
+    t.integer "rating"
   end
 
   create_table "songs", force: :cascade do |t|
