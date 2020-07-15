@@ -32,7 +32,7 @@ class PlaylistsController < ApplicationController
       def playlist_params
         params.require(:playlist).permit(
             :name,
-            :min_age
+            :min_age,
             :happiness_rating,
             :sleepiness_rating
           )
